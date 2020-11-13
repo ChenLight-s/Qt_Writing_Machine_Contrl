@@ -5,7 +5,12 @@
 #include <QSerialPort>
 #include <QSerialPortInfo>
 #include <QPaintEvent>
-
+#include <QEvent>
+#include <QTimerEvent>
+#include <QTimer>
+#include <QKeyEvent>
+extern QSerialPort serial;
+extern int ksljdflk;
 namespace Ui {
 class MainWindow;
 }
@@ -17,6 +22,17 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+//    QSerialPort serial;
+    void sendmusic(void);
+    Ui::MainWindow *ui;
+    void timerEvent(QTimerEvent *);
+    void timeOutEvent(QTimerEvent *);
+    void display(QByteArray data);
+    void display(QByteArray data,QColor color);
+    QKeyEvent *key;
+    void keyReleaseEvent(QKeyEvent *);
+    void on_Laser(QString gongLv);
+    void off_Laser(void);
 
 private slots:
     void serialPort_readyRead();
@@ -31,26 +47,32 @@ private slots:
 
     void on_clearSend_clicked();
 
-    void on_Xup_clicked();
+    void on_searchButton_9_clicked();
 
-    void on_Xdown_clicked();
+    void on_searchButton_8_clicked();
 
-    void on_sendTextEdit_textChanged();
+    void on_searchButton_6_clicked();
 
-    void on_Yup_2_clicked();
+    void on_searchButton_4_clicked();
 
-    void on_Yup_clicked();
+    void on_searchButton_5_clicked();
 
-    void on_Ydown_clicked();
+    void on_searchButton_3_clicked();
 
-    void on_Set_Origin_Button_clicked();
+    void on_searchButton_2_clicked();
 
-    void on_To_Origin_Button_clicked();
+    void on_searchButton_7_clicked();
+
+    void on_checkBox_stateChanged(int arg1);
+    void on_sendButton_2_clicked();
+
+    void on_onLaser_clicked();
+
+    void on_openGCodefile_clicked();
 
 private:
-    Ui::MainWindow *ui;
-    QSerialPort serial;
 
+//    QSerialPort serial;
 protected:
     void paintEvent(QPaintEvent *event);    /* 绘图事件，需要重写 */
 };

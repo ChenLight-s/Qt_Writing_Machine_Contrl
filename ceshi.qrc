@@ -1,6 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-        <file>Lunyeelogo.ico</file>
-        <file>Lunyeelogo.rc</file>
-    </qresource>
-</RCC>

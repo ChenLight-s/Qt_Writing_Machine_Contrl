@@ -6,7 +6,7 @@
 
 QT       += core gui
 QT       += serialport
-QT       += bluetooth
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = serialport
@@ -25,17 +25,50 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += \
+        form.cpp \
+        grblconfig.cpp \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+        midi.cpp \
+        paintrectangle.cpp \
+        paintyuan.cpp \
+        src/Binasc.cpp \
+        src/MidiEvent.cpp \
+        src/MidiEventList.cpp \
+        src/MidiFile.cpp \
+        src/MidiMessage.cpp \
+        src/Options.cpp \
+        writepaint.cpp \
+        writepaints.cpp \
+        xycontrol.cpp
 
 HEADERS += \
-        mainwindow.h
+        form.h \
+        grblconfig.h \
+        include/Binasc.h \
+        include/MidiEvent.h \
+        include/MidiEventList.h \
+        include/MidiFile.h \
+        include/MidiMessage.h \
+        include/Options.h \
+        mainwindow.h \
+        midi.h \
+        paintrectangle.h \
+        paintyuan.h \
+        writepaint.h \
+        writepaints.h \
+        xycontrol.h
 
 FORMS += \
-        mainwindow.ui
+        form.ui \
+        grblconfig.ui \
+        mainwindow.ui \
+        paintrectangle.ui \
+        paintyuan.ui \
+        writepaint.ui \
+        writepaints.ui \
+        xycontrol.ui
 
 RESOURCES += \
     image.qrc
-
-#RC_FILE = Lunyeelogo.rc
 RC_ICONS = Lunyeelogo.ico
